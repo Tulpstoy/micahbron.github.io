@@ -1,0 +1,165 @@
+.tagbar-container {
+    margin: 2rem 0;
+    padding: 1rem 0;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    overflow-x: auto;
+    box-shadow: 0 4px 12px rgba(31,38,135,0.08);
+}
+
+.tagbar-scroll {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start; 
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.tagbar-tag {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.tagbar-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #FF8C00, #FF0080, #40E0D0);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.tagbar-tag:hover::before {
+    opacity: 1;
+}
+
+.tagbar-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(31,38,135,0.15);
+    color: white;
+    border-color: transparent;
+}
+
+.tagbar-tag.active {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(31,38,135,0.12);
+}
+
+.tag-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* Tag-specific colors */
+.all-tag {
+    background: linear-gradient(135deg, rgba(255,140,0,0.1), rgba(255,0,128,0.1), rgba(64,224,208,0.1));
+    border-color: rgba(255,140,0,0.3);
+}
+
+.all-tag:hover {
+    border-color: transparent;
+}
+
+.development-tag {
+    background: linear-gradient(135deg, rgba(64,224,208,0.1), rgba(100,181,246,0.1));
+    border-color: rgba(64,224,208,0.3);
+}
+
+.development-tag:hover {
+    border-color: transparent;
+}
+
+.design-tag {
+    background: linear-gradient(135deg, rgba(255,0,128,0.1), rgba(255,140,0,0.1));
+    border-color: rgba(255,0,128,0.3);
+}
+
+.design-tag:hover {
+    border-color: transparent;
+}
+
+.ux-research-tag {
+    background: linear-gradient(135deg, rgba(156,39,176,0.1), rgba(103,58,183,0.1));
+    border-color: rgba(156,39,176,0.3);
+}
+
+.ux-research-tag:hover {
+    border-color: transparent;
+}
+
+.default-tag {
+    background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,142,83,0.1));
+    border-color: rgba(255,107,107,0.3);
+}
+
+.default-tag:hover {
+    border-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .tagbar-container {
+        margin: 1.5rem 0;
+        border-radius: 20px;
+        padding: 0.75rem 0;
+    }
+    
+    .tagbar-scroll {
+        gap: 0.75rem;
+        padding: 0 0.75rem;
+    }
+    
+    .tagbar-tag {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        border-radius: 999px;
+    }
+    
+    .tag-icon {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tagbar-container {
+        margin: 1rem 0;
+        border-radius: 16px;
+        padding: 0.5rem 0;
+    }
+    
+    .tagbar-scroll {
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    .tagbar-tag {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        border-radius: 999px;
+    }
+    
+    .tag-icon {
+        width: 14px;
+        height: 14px;
+    }
+}
